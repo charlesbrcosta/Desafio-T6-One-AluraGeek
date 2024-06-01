@@ -181,25 +181,26 @@ h2 span {
 
 /* Cards */
 .container {  
-    padding: 8rem 9% 8rem;
-    
+    padding: 8rem 9% 8rem;  
 }
 
 .card-container {
-    max-width: 1480px;
+    max-width: 1428px;
     margin: 0 auto;
 }
 
 .card-content {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));  
-    gap: 1.75rem;
-    margin-inline: 1.75rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+    gap: 28px;
     border-radius: 1.25rem;
     overflow: hidden;
+    justify-content: center;
 }
 
 .card-article {
+    width: 100%;
+    max-width: 250px;
     height: 21.6rem;
     border-radius: 1.25rem;
     overflow: hidden;  
