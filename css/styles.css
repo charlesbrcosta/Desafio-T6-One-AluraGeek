@@ -189,7 +189,6 @@ h2 span {
 /* Cards */
 .container {  
     padding: 8rem 9% 8rem;  
-    min-height: 100vh;
 }
 
 .card-container {
@@ -437,6 +436,33 @@ footer {
     font-size: 1rem;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1039px) {
+    .footer-section {
+        flex: 0;
+    }
 
+    form {
+        width: 20rem;
+    }
+}
+
+@media screen and (max-width: 789px) {
+    .footer-section {
+        flex: 1;
+    }
+
+    form {
+        width: 22rem;
+        padding-right: 2rem;
+    }
+}
+
+@media screen and (max-width: 625px) {
+    .footer-section {
+        flex: 1;
+    }
+
+    form {
+        width: 20rem;
+    }
 }
