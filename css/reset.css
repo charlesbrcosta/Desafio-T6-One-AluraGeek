@@ -1,7 +1,3 @@
-/* Poppins font import */ 
-
-@import url('href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
 /* reset */
 * {
     margin: 0;
@@ -17,11 +13,11 @@
 
 /* colors */
 :root {
-    --color-1: #e8f3f3; /* background body */
+    --color-1: #d2f3f3; /* background body */
     --color-2: #003547; /* background cards */
     --color-3: #c9cb55; /* buttons mobile add */
-    --color-4: #fe8e6a; /* sutilezas */
-    --color-5: #45c3f7; /* buttons add e enviar etc. */
+    --color-4: #f9774b; /* sutilezas */
+    --color-5: #00aced; /* buttons add e enviar etc. */
     --color-6: #fefefe; /* letras para background escuro */
     --color-7: #fc4141; /* buttons cancelar */
     --color-8: #487a6d; /* letras spans*/
@@ -29,7 +25,14 @@
     --color-10: #0e44a8;
     --color-11: #f7f7f7;
     --color-12: #384a50;
+
+    --box-shadow-animation: 0.2em 0.2em 0.2em #00080a6d;
+    --color-instagram: linear-gradient(to bottom right, #4f5bd5 1%, #962fbf, #d62976, #fa7e1e, #feda75);
 }
+
+/* main {
+    margin-top: 5rem;
+} */
 
 body {
     background-color: var(--color-1);
@@ -39,3 +42,4 @@ body {
 a {
     color: var(--color-2);
 }
+
