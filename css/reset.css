@@ -30,10 +30,6 @@
     --color-instagram: linear-gradient(to bottom right, #4f5bd5 1%, #962fbf, #d62976, #fa7e1e, #feda75);
 }
 
-/* main {
-    margin-top: 5rem;
-} */
-
 body {
     background-color: var(--color-1);
     color: var(--color-2);
