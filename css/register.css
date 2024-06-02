@@ -1,0 +1,93 @@
+@import url('./styles.css');
+
+.form-container {
+   display: grid;
+   grid-template-columns: auto;
+   justify-content: center;
+   align-items: center;
+   gap: 2rem;
+}
+
+.form-container h2 {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.form-content {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.form-field {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+    margin-bottom: 2rem;
+}
+
+.form-field label {
+    font-weight: 600;
+}
+
+input[type='text'],
+input[type='number'] {
+    width: 31rem;
+    height: 2.5rem;
+    padding-left: 1rem;
+    border-radius: 8px;
+}
+
+input[type='text'].active:focus,
+input[type='number'].active:focus{
+    outline: 1.8px solid var(--color-10);
+}
+
+.error-message {
+    position: absolute;
+    top: 65px;
+    left: 0;
+    color: var(--color-7);
+    font-weight: 600;
+    padding-left: 1rem;
+}
+
+.form-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.form-button {
+    width: 10rem;
+    height: 3rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    box-shadow: 0.2em 0.2em 0.2em #00080a7e;
+}
+
+.form-button-container input {
+    background-color: var(--color-5);
+    color: var(--color-6);
+
+}
+
+.form-button-container input:hover {
+    background-color: var(--color-10);
+}
+
+
+.form-button-container button {
+    background-color: var(--color-4);
+    color: var(--color-6);
+}
+
+.form-button-container button:hover {
+    background-color: var(--color-7);
+
+}
+

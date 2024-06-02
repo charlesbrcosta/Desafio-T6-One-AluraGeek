@@ -1,4 +1,6 @@
 /* header */
+@import url('./reset.css');
+
 header {
     width: 100%;   
     background-color: var(--color-2);   
@@ -189,6 +191,7 @@ h2 span {
 /* Cards */
 .container {  
     padding: 8rem 9% 8rem;  
+    min-height: 60vh;
 }
 
 .card-container {
