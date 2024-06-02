@@ -6,22 +6,26 @@ header {
     background-color: var(--color-2);   
 }
 
-/* organize Structure */
-.interface {
-    max-width: 1280px;
-    margin: 0 auto;
-}
-
 /* header */
 .top-header {
     padding: 20px 4%;
     background-color: var(--color-6);
 }
 
+/* limite Structure */
+.interface {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
 .top-header > .interface {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.logo h2 {
+    font-weight: 700;
 }
 
 .logo img {
@@ -219,7 +223,7 @@ h2 span {
     position: relative;
     margin-bottom: -0.75rem;
     background-color: var(--color-2);
-    overflow: hidden; /* Ensures the image doesn't overflow the container */
+    overflow: hidden; 
 }
 
 .card-img {
@@ -288,7 +292,7 @@ h2 span {
     width: 0;
     top: 0;
     left: 0;
-    background: linear-gradient(135deg, var(--color-9) 0%, var(--color-9) 50%, #96041f 50%, #bf0426 60%);    
+    background: linear-gradient(135deg, var(--color-2) 0%, var(--color-2) 50%, #96041f 50%, #bf0426 60%);    
     box-shadow: var(--box-shadow-animation);
     transition: 0.3s;
 }
@@ -302,46 +306,6 @@ h2 span {
     box-shadow: var(--box-shadow-animation);
     transform: translate(0.2em, 0.2em);
 }
-
-/* menu responsive */
-/* .menu-responsive {
-    display: none;
-    z-index: 50;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    border-radius: 9px;
-}
-
-.icon-link {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    flex: 1;
-    padding: 0.75rem 1rem;
-    font-size: 1.5rem;
-}
-
-.icon-link i {
-    width: 2.5rem;
-    height: 2.5rem;
-    box-shadow: 0 0 8px #0000005a;
-    border-radius: 9px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    color: var(--color-6);
-    background-color: var(--color-2);
-
-    transition: background-color 0.3s;
-}
-
-.icon-link i:hover {
-    color: var(--color-2);
-    background-color: var(--color-3);
-} */
 
 /* footer */
 footer {
@@ -444,7 +408,7 @@ footer {
         flex: 0;
     }
 
-    form {
+    .footer-section form {
         width: 20rem;
     }
 }
@@ -454,7 +418,7 @@ footer {
         flex: 1;
     }
 
-    form {
+    .footer-section form {
         width: 22rem;
         padding-right: 2rem;
     }
@@ -465,7 +429,7 @@ footer {
         flex: 1;
     }
 
-    form {
+    .footer-section form {
         width: 20rem;
     }
 }
