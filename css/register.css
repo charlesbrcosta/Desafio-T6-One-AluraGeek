@@ -40,6 +40,7 @@ input[type='number'] {
     height: 2.5rem;
     padding-left: 1rem;
     border-radius: 8px;
+    font-weight: 500;       
 }
 
 input[type='text'].active:focus,
@@ -70,7 +71,6 @@ input[type='number'].active:focus{
     border-radius: 8px;
     cursor: pointer;
     font-weight: 700;
-    font-size: 1.1rem;
     box-shadow: 0.2em 0.2em 0.2em #00080a7e;
 }
 
@@ -92,7 +92,6 @@ input[type='number'].active:focus{
 
 .form-button-container button:hover {
     background-color: var(--color-7);
-
 }
 
 @media screen and (max-width: 628px) {
@@ -103,7 +102,6 @@ input[type='number'].active:focus{
 }
 
 @media screen and (max-width: 520px) {
-
     input[type='text'],
     input[type='number'] {
         width: 20rem;
