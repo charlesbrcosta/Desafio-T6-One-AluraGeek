@@ -15,10 +15,7 @@
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> 
 
         <title>AluraGeek</title>
-        
-        <!-- CSS Reset -->
-        <!-- <link rel="stylesheet" href="./css/reset.css" />  -->
-        
+                
         <!-- Custom CSS -->
         <link rel="stylesheet" href="./css/styles.css" />
     </head>
@@ -42,6 +39,7 @@
                 </div>
             </section>  
             <!-- End Section Header -->  
+
             <!-- Section Menu -->            
             <section class="btn-menu">
                 <div class="interface">
@@ -67,80 +65,7 @@
         <!-- Section Container Card -->         
         <section class="container"> 
             <div class="card-container">
-                <div class="card-content">
-
-                    <!-- Card-1 -->
-                    <article class="card-article">
-                        <div class="card-image">
-                            <img src="./assets/imgCard1.jpg" alt="Imagem do Anime Naruto" class="card-img">
-                        </div>
-                        <div class="card-data">
-                            <h2 class="card-title">Naruto dasfsfas</h2>
-                            <p class="card-description">Anime Naruto</p>
-                            <p class="card-price">R$ 250,99</p>
-                            <button class="card-button">Excluir</button>
-                        </div>
-                        <span class="message"></span>
-                    </article>
-                    <!-- End Card-1 -->
-
-                    <!-- Card-2 -->
-                    <article class="card-article">
-                        <div class="card-image">
-                            <img src="./assets/imgCard2.jpg" alt="Imagem do Anime Naruto" class="card-img">
-                        </div>
-                        <div class="card-data">
-                            <h2 class="card-title">Jujutsu Kaisen</h2>
-                            <p class="card-description">Anime Jujutsu Kaisen</p>
-                            <p class="card-price">R$ 250,00</p>
-                            <button class="card-button">Excluir</button>
-                        </div>
-                    </article>
-                    <!-- End Card-2 -->
-
-                    <!-- Card-3 -->
-                    <article class="card-article">
-                        <div class="card-image">
-                            <img src="./assets/imgCard3.jpg" alt="Imagem do Anime Naruto" class="card-img">
-                        </div>
-                        <div class="card-data">
-                            <h2 class="card-title">Fortnite</h2>
-                            <p class="card-description">Jogo Fortnite</p>
-                            <p class="card-price">R$ grátis</p>
-                            <button class="card-button">Excluir</button>
-                        </div>
-                    </article>
-                    <!-- End Card-3 -->
-
-                    <!-- Card-4 -->
-                    <!-- <article class="card-article">
-                        <div class="card-image">
-                            <img src="./assets/imgCard4.jpg" alt="Imagem do Anime Naruto" class="card-img">
-                        </div>
-                        <div class="card-data">
-                            <h2 class="card-title">Samurai X</h2>
-                            <p class="card-description">Anime Samurai X</p>
-                            <p class="card-price">R$ 200,00</p>
-                            <button class="card-button">Excluir</button>
-                        </div>
-                        <span class="message"></span>
-                    </article> -->
-                    <!-- End Card-4 -->       
-                    
-                    <!-- Card-4 -->
-                    <!-- <article class="card-article">
-                        <div class="card-image">
-                            <img src="./assets/imgCard4.jpg" alt="Imagem do Anime Naruto" class="card-img">
-                        </div>
-                        <div class="card-data">
-                            <h2 class="card-title">Samurai X</h2>
-                            <p class="card-description">Anime Samurai X</p>
-                            <p class="card-price">R$ 200,00</p>
-                            <button class="card-button">Excluir</button>
-                        </div>
-                    </article> -->
-                    <!-- End Card-4 --> 
-                </div>
+                <div class="card-content" data-list></div>
             </div>    
         </section>                   
         <!-- End Section Container Card --> 
@@ -187,6 +112,6 @@
         <!-- End footer -->
 
         <!-- JavaScript -->
-        <script src="./js/app.js" defer></script>
+        <script src="./js/showCards.js" type="module"></script>
     </body>
 </html>

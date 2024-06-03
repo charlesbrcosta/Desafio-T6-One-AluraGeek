@@ -70,25 +70,25 @@
                 <form class="form-content" data-form>
                     <fieldset class="form-field">
                         <label class="field-title" for="title">Título</label>
-                        <input name="title" id="title" class="title-card" type="text" minlength="6"  maxlength="15" placeholder="informe o título do produto." required />
+                        <input name="title" id="title" class="title-card" type="text" minlength="6"  maxlength="17" placeholder="informe o título do produto." data-title required />
                         <span class="error-message"></span>
                     </fieldset>
 
                     <fieldset class="form-field">
-                        <label class="field-description" for="description">Descrição</label>
-                        <input name="description" id="description" class="description-card" type="text" minlength="6" maxlength="15" placeholder="Informe a descrição do produto." required />
+                        <label class="field-category" for="category">Categoria</label>
+                        <input name="category" id="category" class="category-card" type="text" minlength="4" maxlength="10" placeholder="Informe a descrição do produto." data-category required />
                         <span class="error-message"></span>
                     </fieldset>
 
                     <fieldset class="form-field">
                         <label class="field-price" for="price">Preço</label>
-                        <input name="price" id="price" class="price-card" type="number" minlength="1" maxlength="12" placeholder="Informe o preço do produto." required  />
+                        <input name="price" id="price" class="price-card" type="text" minlength="1" maxlength="12" placeholder="Informe o preço do produto." data-price required  />
                         <span class="error-message"></span>
                     </fieldset>
 
                     <fieldset class="form-field">
                         <label class="field-url-image" for="url-image">URL da imagem</label>
-                        <input name="url-image" id="url-image" class="url-image-card" type="text" placeholder="Informe a url da imagem do produto." required />
+                        <input name="url-image" id="url-image" class="url-image-card" type="text" placeholder="Informe a url da imagem do produto." data-image required />
                         <span class="error-message"></span>
                     </fieldset>
 
@@ -118,7 +118,7 @@
                 <div class="footer-section links">
                     <h2>Links Rápidos</h2>
                     <ul>
-                        <li><a href="./index.html">Página Inicial</a></li>
+                        <li><a href="../index.html">Página Inicial</a></li>
                         <li><a href="#">Cadastrar Produtos</a></li>
                     </ul>
                 </div>
@@ -146,5 +146,6 @@
 
         <!-- JavaScript -->
         <script src="../js/register.js" defer></script>
+        <script src="../js/createCards.js" type="module"></script>
     </body>
 </html>
