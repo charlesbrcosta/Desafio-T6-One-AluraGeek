@@ -2,6 +2,10 @@ import { connectionApi } from './connectionApi.js';
 
 const form = document.querySelector('[data-form]');
 
+if(form) {
+    form.addEventListener('submit', event => handleCreateCard(event));
+}
+
 async function handleCreateCard(event) {
     event.preventDefault();
 
@@ -12,10 +16,9 @@ async function handleCreateCard(event) {
 
     try {
         await connectionApi.handlePostApi(title, category, price, image);
-        
-    } catch(Error) {
-        console.error(Error);
+        console.log('Card criado com sucesso');
+    } catch(error) {
+        console.error('Erro ao criar card', error);
     }
 }
 
-form.addEventListener('submit', event => handleCreateCard(event));

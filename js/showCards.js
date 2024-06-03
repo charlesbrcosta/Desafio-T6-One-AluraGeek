@@ -22,26 +22,26 @@ function handleBuildCard(id, title, category, price, image) {
     
     deleteCard.addEventListener('click', async (event) => {
         event.preventDefault();
-        handleDeleteCard(id, deleteCard);
+        await handleDeleteCard(id, card);
     });
 
     return card;
 }
 
-async function handleShowCards() {   
-    const cards = await connectionApi.handleConnectionApi();
+async function handleShowCards() {
     try {
-        cards.forEach(element => listCards.appendChild(
-            handleBuildCard(
-                element.id, 
-                element.title, 
-                element.category, 
-                element.price, 
+        const cards = await connectionApi.handleConnectionApi();
+        cards.forEach(element => {
+            listCards.appendChild(handleBuildCard(
+                element.id,
+                element.title,
+                element.category,
+                element.price,
                 element.image
-            )
-        ));
-    } catch(Error) {
-        console.error(Error );
+            ));
+        });
+    } catch (error) {
+        console.error('Erro ao exibir cards:', error);
     }
 }
 
@@ -49,12 +49,9 @@ async function handleDeleteCard(id, card) {
     try {
         await connectionApi.handleDeleteApi(id);
         card.remove();
-
-    } catch(Error) {
-        console.error(Error);
+    } catch (error) {
+        console.error('Erro ao deletar card:', error);
     }
-
-    return card;
 }
 
 handleShowCards();

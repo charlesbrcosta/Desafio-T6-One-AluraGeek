@@ -16,16 +16,16 @@ async function handleConnectionApi() {
 async function handlePostApi(title, category, price, image) {
     const connection = await fetch(apiUrl, 
         {
-            method : 'POST',
-            headers : {
+            method: 'POST',
+            headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(
                 {
-                    title : title,
-                    category : category,
-                    price : price, 
-                    image : image
+                    title: title,
+                    category: category,
+                    price: price, 
+                    image: image
                 }
             )
         }
@@ -41,9 +41,9 @@ async function handlePostApi(title, category, price, image) {
 
 async function handleDeleteApi(id) {
     const connection = await fetch(`${apiUrl}/${id}`, {
-        method : 'DELETE',
-        headers : {
-            'Content-Type' : 'application/json'
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
         },
     });
 
@@ -59,46 +59,3 @@ export const connectionApi = {
     handlePostApi,
     handleDeleteApi
 };
-
-
-
-/* comparar *//* 
-const port = 3000;
-const apiUrl = `http://localhost:${port}/cards`;
-
-async function handleConnetionApi() {
-    const connection = await fetch(apiUrl);
-    if (!connection.ok) {
-        throw new Error('Erro ao conectar com a API');
-    }
-    const res = await connection.json();
-    return res;
-}
-
-async function handlePostApi(title, description, price, image) {
-    const connection = await fetch(apiUrl, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            title: title,
-            description: description,
-            price: price,
-            image: image
-        })
-    });
-
-    if (!connection.ok) {
-        throw new Error('Erro ao postar dados na API');
-    }
-
-    const res = await connection.json();
-    return res;
-}
-
-export const connectionApi = {
-    handleConnetionApi,
-    handlePostApi
-};
- */

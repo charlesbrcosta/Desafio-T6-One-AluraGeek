@@ -1,39 +1,18 @@
 {
   "cards": [
     {
-      "title": "Naruto Shippuden",
-      "category": "Anime",
-      "price": "200.00",
-      "image": "https://i.ytimg.com/sh/ST6cPSuO2FKlBz-JpCqQqQ/market_sd.jpg",
+      "title": "naruto",
+      "category": "anime",
+      "price": "1234",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0CSoXUkN3Ha-YixhZqeHyB2ldyhz1YcKJ_g&s",
       "id": 1
-    },
-    {
-      "title": "Bleach",
-      "category": "Anime",
-      "price": "200.00",
-      "image": "https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=1200,height=675/catalog/crunchyroll/8ee28177b8ff7446c5b5539e3d57dfae.jpe",
-      "id": 2
-    },
-    {
-      "title": "Samurai X",
-      "category": "Anime",
-      "price": "200.00",
-      "image": "https://p2.trrsf.com/image/fget/cf/1200/900/middle/images.terra.com/2023/07/06/screenshot-novo-pv-novo-anime-rurouni-kenshin-vbemvus03psz.jpg",
-      "id": 3
     },
     {
       "title": "Dragon Ball Z",
       "category": "Anime",
-      "price": "2510.00",
-      "image": "https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=480,height=720/catalog/crunchyroll/35e4ac6339f5fdcc164160a5755790cd.jpe",
-      "id": 4
-    },
-    {
-      "title": "Jujutsu kaisen",
-      "category": "Anime",
       "price": "250.00",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfQzfnaC7nerL4qPnXc9X3wofkj_LSLZCWlA&s",
-      "id": 5
+      "image": "https://kanto.legiaodosherois.com.br/w728-h381-gnw-cfill-gcc-f:fbcover/wp-content/uploads/2022/06/legiao_C8drOyxmFHUV.png.webp",
+      "id": 3
     }
   ]
 }
