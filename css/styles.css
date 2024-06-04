@@ -217,31 +217,32 @@ h2 span {
     max-width: 250px;
     height: 21.6rem;
     border-radius: 1.25rem;
-    overflow: hidden;  
+    overflow: hidden;
 }
 .card-image {
     width: 250px;
     height: 160px;
-    /* position: relative; */
+    position: relative;
+    z-index: 5;
     margin-bottom: -0.75rem;
     background-color: var(--color-2);
     overflow: hidden; 
 }
 
+.card-img {
+    width: 100%;
+    height: 160px;
+    z-index: 2;
+    position: absolute; 
+    object-fit: cover; 
+    margin: 0 auto;
+    transition: transform 0.3s ease; /* transition effect zoom */
+    cursor: pointer;
+}
+
 /* effect zoom */ 
 .card-image:hover .card-img {
     transform: scale(1.2);
-}
-
-.card-img {
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    position: relative;     
-    object-fit: cover; 
-    /* margin: 0 auto; */
-    transition: transform 0.3s ease; /* transition effect zoom */
-    cursor: pointer;
 }
 
 .card-data {
@@ -405,6 +406,15 @@ footer {
     font-size: 1rem;
 }
 
+.message {
+    font-size: 1.75rem;
+    font-weight: 500;
+    color: var(--color-7);
+    text-align: center;
+    /* white-space: nowrap; */
+    /* color: gray; */
+}
+
 @media screen and (max-width: 1039px) {
     .footer-section {
         flex: 0;
@@ -433,5 +443,17 @@ footer {
 
     .footer-section form {
         width: 20rem;
+    }
+}
+
+@media screen and (max-width: 538px) {
+    .message {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 456px) {
+    .message {
+        font-size: 1.25rem;
     }
 }

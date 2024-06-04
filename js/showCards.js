@@ -16,7 +16,7 @@ function handleBuildCard(id, title, category, price, image) {
             <p class="card-price">R$ ${price}</p>
             <button class="card-button" data-delete-card>Excluir</button>
         </div>
-        <span class="message"></span>`;
+    `;
     
     const deleteCard = card.querySelector('[data-delete-card]');
     
@@ -31,17 +31,25 @@ function handleBuildCard(id, title, category, price, image) {
 async function handleShowCards() {
     try {
         const cards = await connectionApi.handleConnectionApi();
-        cards.forEach(element => {
-            listCards.appendChild(handleBuildCard(
-                element.id,
-                element.title,
-                element.category,
-                element.price,
-                element.image
-            ));
-        });
-    } catch (error) {
-        console.error('Erro ao exibir cards:', error);
+
+        if(cards.length === 0) {
+            listCards.innerHTML = `<span class="message">Nenhum produto cadastrador</span>`;
+        } else {
+            listCards.innerHTML = '';
+            cards.forEach(element => {
+                listCards.appendChild(handleBuildCard(
+                    element.id,
+                    element.title,
+                    element.category,
+                    element.price,
+                    element.image
+                ));
+            });
+        }
+    } catch (erro){
+        console.error('Erro ao exibir cards:', erro);
+        listCards.innerHTML = `<span class="message">Não foi possível carregar a lista de cards</span>`;
+
     }
 }
 
@@ -49,8 +57,8 @@ async function handleDeleteCard(id, card) {
     try {
         await connectionApi.handleDeleteApi(id);
         card.remove();
-    } catch (error) {
-        console.error('Erro ao deletar card:', error);
+    } catch (erro) {
+        console.error('Erro ao deletar card:', erro);
     }
 }
 

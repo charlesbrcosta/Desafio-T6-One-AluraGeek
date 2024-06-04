@@ -1,18 +1,3 @@
 {
-  "cards": [
-    {
-      "title": "naruto",
-      "category": "anime",
-      "price": "1234",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0CSoXUkN3Ha-YixhZqeHyB2ldyhz1YcKJ_g&s",
-      "id": 1
-    },
-    {
-      "title": "Dragon Ball Z",
-      "category": "Anime",
-      "price": "250.00",
-      "image": "https://kanto.legiaodosherois.com.br/w728-h381-gnw-cfill-gcc-f:fbcover/wp-content/uploads/2022/06/legiao_C8drOyxmFHUV.png.webp",
-      "id": 3
-    }
-  ]
+  "cards": []
 }

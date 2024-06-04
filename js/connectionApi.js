@@ -1,18 +1,20 @@
 const port = 3000;
 const apiUrl = `http://localhost:${port}/cards`;
 
-
+/* function connection API */
 async function handleConnectionApi() {
     const connection = await fetch(apiUrl);
     
     if(!connection.ok) {
         throw new Error('Erro ao conectar com a API');
+    } else {
+        
     }
-
     const res = await connection.json();
     return res;
 }
 
+/* function POST API */
 async function handlePostApi(title, category, price, image) {
     const connection = await fetch(apiUrl, 
         {
@@ -39,6 +41,7 @@ async function handlePostApi(title, category, price, image) {
     return res;
 }
 
+/* function DELETE API */
 async function handleDeleteApi(id) {
     const connection = await fetch(`${apiUrl}/${id}`, {
         method: 'DELETE',
@@ -54,6 +57,7 @@ async function handleDeleteApi(id) {
     return connection;
 }
 
+/* Export an object called connectionApi that contains references to three functions */
 export const connectionApi = {
     handleConnectionApi,
     handlePostApi,
