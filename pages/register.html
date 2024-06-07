@@ -71,25 +71,25 @@
                 <form class="form-content" data-form>
                     <fieldset class="form-field">
                         <label class="field-name" for="name">Nome</label>
-                        <input name="name" id="name" class="name-card" type="text" minlength="6"  maxlength="17" placeholder="Nome do produto Ex.: Naruto Shippuden." data-name required/>
+                        <input name="name" id="name" class="name-card" type="text" minlength="6"  maxlength="17" autocomplete="off" placeholder="Nome do produto Ex.: Naruto, Minions..." data-name required/>
                         <span class="error-message" data-error></span>
                     </fieldset>
 
                     <fieldset class="form-field">
                         <label class="field-category" for="category">Categoria</label>
-                        <input name="category" id="category" class="category-card" type="text" minlength="5" maxlength="10" placeholder="Nome da categoria Ex.: Anime." data-category required/>
+                        <input name="category" id="category" class="category-card" type="text" minlength="5" maxlength="10" autocomplete="off" placeholder="Nome da categoria Ex.: Anime, Filme..." data-category required/>
                         <span class="error-message" data-error></span>
                     </fieldset>
 
                     <fieldset class="form-field">
                         <label class="field-price" for="price">Preço</label>
-                        <input name="price" id="price" class="price-card" type="text" minlength="3" maxlength="12" placeholder="Preço Ex.: 1.00" data-price required/>
+                        <input name="price" id="price" class="price-card" type="text" minlength="4" maxlength="12" autocomplete="off" placeholder="Preço Ex.: 1.00" data-price required/>
                         <span class="error-message" data-error></span>
                     </fieldset>
 
                     <fieldset class="form-field">
                         <label class="field-url-image" for="url-image">URL da imagem</label>
-                        <input name="image" id="url-image" class="url-image-card" type="text" minlength="20" placeholder="Ex.: https://www.imagem.com.br/img.jpg" data-image required/>
+                        <input name="image" id="url-image" class="url-image-card" type="text" minlength="20" autocomplete="off" placeholder="Ex.: https://www.imagem.com.br/img.jpg" data-image required/>
                         <span class="error-message" data-error></span>
                     </fieldset>
 
@@ -100,7 +100,7 @@
 
                 </form>
                    <!-- cadastrado com sucesso -->
-                <div id="success-modal" class="success-modal" data-success-modal hidden>
+                <div id="success-modal" class="success-modal hidden-modal-form" data-success-modal>
                     <div class="modal-content">
                         <p>Produto cadastrado com sucesso!</p>
                         <button id="success-button" class="modal-button" data-success-button>ok</button>
@@ -108,7 +108,7 @@
                 </div>
 
                 <!-- modal de confirmação -->
-                <div id="confirmation-modal" class="confirmation-modal" data-confirmation-modal hidden>
+                <div id="confirmation-modal" class="confirmation-modal hidden-modal-form" data-confirmation-modal>
                     <div class="modal-content">
                         <p id="message-modal">Deseja cadastrar um novo produto?</p>
                         <button id="yes-button" class="modal-button" data-yes-button>Sim</button>
@@ -149,7 +149,7 @@
                 <div class="footer-section newsletter">
                     <h2>Newsletter</h2>
                     <form action="#">
-                        <input type="email" placeholder="Seu e-mail">
+                        <input type="email" autocomplete="off" placeholder="Seu e-mail">
                         <button type="submit">Inscrever-se</button>
                     </form>
                 </div>

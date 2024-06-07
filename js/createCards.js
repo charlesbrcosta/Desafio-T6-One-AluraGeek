@@ -34,7 +34,7 @@ const messages = {
     },
     price: {
         valueMissing: "O campo não pode estar vazio.",
-        tooShort: "O campo não pode ter menos de 3 caracteres",
+        tooShort: "O campo não pode ter menos de 4 caracteres",
     },
     image: {
         valueMissing: "O campo não pode estar vazio",
@@ -47,9 +47,15 @@ function handleCheckField(field) {
 
     field.setCustomValidity('');
 
+    /* if(field.value.trim() === '') {
+        field.setCustomValidity(messages[field.name].valueMissing)
+    } */
+
     errorTypes.forEach(error => {
         if (field.validity[error]) {
             message = messages[field.name][error];
+        } else if (field.value.trim() === '') {
+            field.setCustomValidity(messages[field.name][error])
         }
     });
 
@@ -100,22 +106,18 @@ async function handleFormSubmit() {
 
     if (formIsValid) {      
         console.log("Formulário válido");
-        try {
-            await handleCreateCard(); 
-            handleShowSuccessModal();         
-        } catch (error) {
-            console.error('Erro ao criar card:', error);
-        }
+        await handleCreateCard(); 
+        handleShowSuccessModal();         
     } else {
         console.log('Formulário inválido, verifique os campos obrigatórios.');
     }
 }
 
 async function handleCreateCard() {
-    const name = nameInput.value;
-    const category = categoryInput.value;
-    const price = priceInput.value;
-    const image = imageInput.value;
+    const name = nameInput.value.trim();
+    const category = categoryInput.value.trim();
+    const price = priceInput.value.trim();
+    const image = imageInput.value.trim();
 
     try {
         await connectionApi.handlePostApi(name, category, price, image);
@@ -129,11 +131,11 @@ async function handleCreateCard() {
 
 
 function handleShowSuccessModal() {
-    successModal.removeAttribute('hidden');
+    successModal.classList.remove('hidden-modal-form');
 }
 
 function handleHiddenSuccessModal() {
-    successModal.setAttribute('hidden', 'true');
+    successModal.classList.add('hidden-modal-form');
 }
 
 successButton.addEventListener('click', () => {
@@ -143,11 +145,11 @@ successButton.addEventListener('click', () => {
 });
 
 function handleShowConfirmationModal() {
-    confirmationModal.removeAttribute('hidden');
+    confirmationModal.classList.remove('hidden-modal-form');
 }
 
 function handleHiddenConfirmationModal() {
-    confirmationModal.setAttribute('hidden', 'true');
+    confirmationModal.classList.add('hidden-modal-form');
 }
 
 yesButton.addEventListener('click', () => handleHiddenConfirmationModal());

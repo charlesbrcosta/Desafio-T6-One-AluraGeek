@@ -96,6 +96,10 @@ input[type='number'].active:focus{
     background-color: var(--color-7);
 }
 
+.hidden-modal-form {
+    display: none;
+}
+
 .success-modal {
     position: fixed;
     z-index: 999;
@@ -202,5 +206,11 @@ input[type='number'].active:focus{
         height: 3rem;
         font-weight: 600;
         font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 512px) {
+    .modal-content {
+        max-width: 365px;
     }
 }

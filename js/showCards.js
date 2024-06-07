@@ -53,7 +53,6 @@ async function handleShowCards() {
     } catch (erro){
         console.error('Erro ao exibir cards:', erro);
         listCards.innerHTML = `<span class="message">Não foi possível carregar a lista de cards</span>`;
-
     }
 }
 
@@ -76,11 +75,11 @@ function handleShowEmptyMessage() {
 }
 
 function handleShowExclusionModal() {
-    exclusionModal.removeAttribute('hidden');
+    exclusionModal.classList.remove('hidden-modal-exclusion');
 }
 
 function handleHiddenExclusionModal() {
-    exclusionModal.setAttribute('hidden', 'true');
+    exclusionModal.classList.add('hidden-modal-exclusion');
 }
 
 exclusionButton.addEventListener('click', (event) => {

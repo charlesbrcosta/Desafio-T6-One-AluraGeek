@@ -221,12 +221,14 @@ h2 span {
     height: 21.6rem;
     border-radius: 1.25rem;
     overflow: hidden;
+    box-shadow: 0.1rem 0.01rem 0.3rem #00080a6d;
 }
+
 .card-image {
     width: 250px;
     height: 160px;
     position: relative;
-    z-index: 1;
+    z-index: 10;
     margin-bottom: -0.75rem;
     background-color: var(--color-2);
     overflow: hidden; 
@@ -241,6 +243,7 @@ h2 span {
     margin: 0 auto;
     transition: transform 0.3s ease; /* transition effect zoom */
     cursor: pointer;
+    /* background-color: var(--color-9); */
 }
 
 /* effect zoom */ 
@@ -256,12 +259,14 @@ h2 span {
     color: var(--color-6);
     background-color: var(--color-2);   
     overflow: hidden;
+    margin-top: 0.6rem;
+    height: 188px;
 }
 
-.card-title {
+.card-name {
     font-size: 1.25rem;
     color: var(--color-5);
-    margin: 0.5rem;
+    margin: 0.4rem;
 }
 
 .card-category {
@@ -314,6 +319,10 @@ h2 span {
 }
 
 /* Modal Exclusion */
+.hidden-modal-exclusion {
+    display: none;
+}
+
 .exclusion-modal {
     position: fixed;
     z-index: 1000;
@@ -324,7 +333,6 @@ h2 span {
     overflow: auto;
     background-color: rgba(0,0,0,0.5);
 }
-
 
 .modal-content #exclusion-button {
     background-color: var(--color-4);      
