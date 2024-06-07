@@ -1,7 +1,4 @@
 /* header */
-@import url('./reset.css');
-@import url('./register.css');
-
 header {
     width: 100%;   
     background-color: var(--color-2);   
