@@ -1,8 +1,10 @@
 import { connectionApi } from './connectionApi.js';
 
 const listCards = document.querySelector('[data-list]');
+const exclusionModal = document.querySelector('[data-exclusion-modal]');
+const exclusionButton = document.querySelector('[data-exclusion-button]');
 
-function handleBuildCard(id, title, category, price, image) {
+function handleBuildCard(id, name, category, price, image) {
     const card = document.createElement('article');
     card.className = 'card-article';
     card.setAttribute('data-id', id);
@@ -11,7 +13,7 @@ function handleBuildCard(id, title, category, price, image) {
             <img src="${image}" alt="Imagem do Anime Naruto" class="card-img">
         </div>
         <div class="card-data">
-            <h2 class="card-title">${title}</h2>
+            <h2 class="card-name">${name}</h2>
             <p class="card-category">${category}</p>
             <p class="card-price">R$ ${price}</p>
             <button class="card-button" data-delete-card>Excluir</button>
@@ -33,13 +35,15 @@ async function handleShowCards() {
         const cards = await connectionApi.handleConnectionApi();
 
         if(cards.length === 0) {
-            listCards.innerHTML = `<span class="message">Nenhum produto cadastrador</span>`;
+            handleShowEmptyMessage();
+            
+            
         } else {
             listCards.innerHTML = '';
             cards.forEach(element => {
                 listCards.appendChild(handleBuildCard(
                     element.id,
-                    element.title,
+                    element.name,
                     element.category,
                     element.price,
                     element.image
@@ -57,9 +61,33 @@ async function handleDeleteCard(id, card) {
     try {
         await connectionApi.handleDeleteApi(id);
         card.remove();
+        handleShowExclusionModal();
+        if (listCards.children.length === 0) {
+            handleShowEmptyMessage();
+        }
+
     } catch (erro) {
         console.error('Erro ao deletar card:', erro);
     }
 }
 
+function handleShowEmptyMessage() {
+    listCards.innerHTML = `<span class="message">Nenhum produto cadastrador</span>`;
+}
+
+function handleShowExclusionModal() {
+    exclusionModal.removeAttribute('hidden');
+}
+
+function handleHiddenExclusionModal() {
+    exclusionModal.setAttribute('hidden', 'true');
+}
+
+exclusionButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    handleHiddenExclusionModal();
+});
+
 handleShowCards();
+
+

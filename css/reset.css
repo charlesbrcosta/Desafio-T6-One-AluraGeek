@@ -6,7 +6,8 @@
     text-decoration: none;
     border: none;
     outline: none;
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; */
+    /* overflow: hidden; */
     font-family: 'Poppins', sans-serif;
     list-style: none;
 }
@@ -25,6 +26,7 @@
     --color-10: #0e44a8;
     --color-11: #f7f7f7;
     --color-12: #384a50;
+    --color-13: #07af82;
 
     --box-shadow-animation: 0.2em 0.2em 0.2em #00080a6d;
     --color-instagram: linear-gradient(to bottom right, #4f5bd5 1%, #962fbf, #d62976, #fa7e1e, #feda75);

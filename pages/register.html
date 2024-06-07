@@ -16,7 +16,8 @@
 
         <title>AluraGeek</title>
         
-        <!-- Custom CSS -->
+        <!-- <link rel="stylesheet" href="../css/reset.css">
+        <link rel="stylesheet" href="../css/styles.css"> -->
         <link rel="stylesheet" href="../css/register.css" />
     </head>
     <body>
@@ -65,39 +66,55 @@
         <!-- form -->         
         <main class="container">
             <section class="form-container">
-                <h2 class="form-title-text">Cadastro de Produtos</h2>
+                <h2 class="form-name-text">Cadastro de Produtos</h2>
             
                 <form class="form-content" data-form>
                     <fieldset class="form-field">
-                        <label class="field-title" for="title">Título</label>
-                        <input name="title" id="title" class="title-card" type="text" minlength="6"  maxlength="17" placeholder="informe o título do produto." data-title required />
-                        <span class="error-message"></span>
+                        <label class="field-name" for="name">Nome</label>
+                        <input name="name" id="name" class="name-card" type="text" minlength="6"  maxlength="17" placeholder="Nome do produto Ex.: Naruto Shippuden." data-name required/>
+                        <span class="error-message" data-error></span>
                     </fieldset>
 
                     <fieldset class="form-field">
                         <label class="field-category" for="category">Categoria</label>
-                        <input name="category" id="category" class="category-card" type="text" minlength="4" maxlength="10" placeholder="Informe a descrição do produto." data-category required />
-                        <span class="error-message"></span>
+                        <input name="category" id="category" class="category-card" type="text" minlength="5" maxlength="10" placeholder="Nome da categoria Ex.: Anime." data-category required/>
+                        <span class="error-message" data-error></span>
                     </fieldset>
 
                     <fieldset class="form-field">
                         <label class="field-price" for="price">Preço</label>
-                        <input name="price" id="price" class="price-card" type="text" minlength="1" maxlength="12" placeholder="Informe o preço do produto." data-price required  />
-                        <span class="error-message"></span>
+                        <input name="price" id="price" class="price-card" type="text" minlength="3" maxlength="12" placeholder="Preço Ex.: 1.00" data-price required/>
+                        <span class="error-message" data-error></span>
                     </fieldset>
 
                     <fieldset class="form-field">
                         <label class="field-url-image" for="url-image">URL da imagem</label>
-                        <input name="url-image" id="url-image" class="url-image-card" type="text" placeholder="Informe a url da imagem do produto." data-image required />
-                        <span class="error-message"></span>
+                        <input name="image" id="url-image" class="url-image-card" type="text" minlength="20" placeholder="Ex.: https://www.imagem.com.br/img.jpg" data-image required/>
+                        <span class="error-message" data-error></span>
                     </fieldset>
 
                     <div class="form-button-container">
-                        <input value="Cadastrar" class="form-button" id="form-button" data-button-submit type="submit">
-                        <button class="form-button" data-clear-button>Limpar</button>                        
+                        <button class="form-button" id="form-button" data-button-submit type="button" >Cadastrar</button>
+                        <button class="form-button" data-clear-button type="button">Limpar</button>                        
                     </div>
 
                 </form>
+                   <!-- cadastrado com sucesso -->
+                <div id="success-modal" class="success-modal" data-success-modal hidden>
+                    <div class="modal-content">
+                        <p>Produto cadastrado com sucesso!</p>
+                        <button id="success-button" class="modal-button" data-success-button>ok</button>
+                    </div>
+                </div>
+
+                <!-- modal de confirmação -->
+                <div id="confirmation-modal" class="confirmation-modal" data-confirmation-modal hidden>
+                    <div class="modal-content">
+                        <p id="message-modal">Deseja cadastrar um novo produto?</p>
+                        <button id="yes-button" class="modal-button" data-yes-button>Sim</button>
+                        <button id="no-button" data-no-button>Não</button>
+                    </div>
+                </div>
             </section>
         </main>
         <!-- End form-->
@@ -144,7 +161,6 @@
         <!-- End footer -->
 
         <!-- JavaScript -->
-        <script src="../js/register.js" defer></script>
         <script src="../js/createCards.js" type="module"></script>
     </body>
 </html>
