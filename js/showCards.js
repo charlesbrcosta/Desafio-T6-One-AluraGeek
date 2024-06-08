@@ -71,7 +71,7 @@ async function handleDeleteCard(id, card) {
 }
 
 function handleShowEmptyMessage() {
-    listCards.innerHTML = `<span class="message">Nenhum produto cadastrador</span>`;
+    listCards.innerHTML = `<span class="message">Nenhum produto cadastrado</span>`;
 }
 
 function handleShowExclusionModal() {
