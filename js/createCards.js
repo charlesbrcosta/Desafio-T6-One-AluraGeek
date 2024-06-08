@@ -130,7 +130,7 @@ async function handleFormSubmit() {
     const priceValue = priceInput.value;
 
     if (!isValidPrice(priceValue)) {
-        alert('Valor inválido. Por favor, insira um valor válido.');
+        console.log('Valor inválido. Por favor, insira um valor válido.');
         formIsValid = false;
     }
 

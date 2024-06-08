@@ -337,6 +337,11 @@ h2 span {
     transition: background-color 0.3s ease;
 }
 
+.modal-content #exclusion-button:active {
+    box-shadow: var(--box-shadow-animation);
+    transform: translate(0.2em, 0.2em);
+}
+
 .modal-content #exclusion-button:hover {
     background-color: var(--color-7);
     box-shadow: none; 
