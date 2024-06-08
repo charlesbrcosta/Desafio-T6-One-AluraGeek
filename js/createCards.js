@@ -1,4 +1,3 @@
- 
 import { connectionApi } from './connectionApi.js';
 
 const form = document.querySelector('[data-form]');
@@ -10,19 +9,21 @@ const priceInput = document.querySelector('[data-price]');
 const imageInput = document.querySelector('[data-image]');
 const clearButton = document.querySelector('[data-clear-button]');
 
-// Elements Success Modal
+// Elementos do modal sucesso
 const successModal = document.querySelector('[data-success-modal]');
 const successButton = document.querySelector('[data-success-button]');
 
-//Elements Confirmation Modal
+// Elementos do modal de confirmação
 const confirmationModal = document.querySelector('[data-confirmation-modal]');
 const yesButton = document.querySelector('[data-yes-button]');
 const noButton = document.querySelector('[data-no-button]');
 
+//Elemento da obrigatoriedade dos inputs
 const formFields = document.querySelectorAll('[required]');
 
 const errorTypes = ['valueMissing', 'tooShort'];
 
+// objeto que armazena mensagens referente a validação dos inputs
 const messages = {
     name: {
         valueMissing: "O campo não pode estar vazio.",
@@ -30,11 +31,11 @@ const messages = {
     },
     category: {
         valueMissing: "O campo não pode estar vazio.",
-        tooShort: "O campo não pode ter menos de 5 caracteres",
+        tooShort: "O campo não pode ter menos de 4 caracteres",
     },
     price: {
         valueMissing: "O campo não pode estar vazio.",
-        tooShort: "O campo não pode ter menos de 4 caracteres",
+        /* tooShort: "O campo não pode ter menos de 4 caracteres", */
     },
     image: {
         valueMissing: "O campo não pode estar vazio",
@@ -42,20 +43,19 @@ const messages = {
     }
 };
 
+// função responsavel para verificação dos campos
 function handleCheckField(field) {
     let message = '';
 
     field.setCustomValidity('');
 
-    /* if(field.value.trim() === '') {
-        field.setCustomValidity(messages[field.name].valueMissing)
-    } */
+    if (field.value.trim() === '') {
+        field.setCustomValidity(messages[field.name].valueMissing);
+    }
 
     errorTypes.forEach(error => {
         if (field.validity[error]) {
             message = messages[field.name][error];
-        } else if (field.value.trim() === '') {
-            field.setCustomValidity(messages[field.name][error])
         }
     });
 
@@ -67,6 +67,29 @@ function handleCheckField(field) {
     } else {
         errorMessage.textContent = '';
     }
+}
+
+// Função para formatar o valor do campo de preço ao sair do campo
+function formatPriceInput(event) {
+    let value = event.target.value;
+
+    // Remove qualquer caractere que não seja número
+    value = value.replace(/\D/g, '');
+
+    // Adiciona vírgula e ponto conforme necessário
+    const formattedValue = (Number(value) / 100).toLocaleString('pt-BR', { minimumFractionDigits: 2 });
+
+    // Atualiza o valor do campo de entrada
+    event.target.value = formattedValue;
+}
+
+// Adiciona ouvintes de eventos ao campo de preço
+priceInput.addEventListener('blur', formatPriceInput);
+
+// Função para verificar se o valor é válido antes de enviar para a API
+function isValidPrice(value) {
+    const regex = /^\d{1,3}(?:\.\d{3})*(?:,\d{2})?$/;
+    return regex.test(value);
 }
 
 formFields.forEach(field => {
@@ -104,6 +127,13 @@ async function handleFormSubmit() {
         }
     });
 
+    const priceValue = priceInput.value;
+
+    if (!isValidPrice(priceValue)) {
+        alert('Valor inválido. Por favor, insira um valor válido.');
+        formIsValid = false;
+    }
+
     if (formIsValid) {      
         console.log("Formulário válido");
         await handleCreateCard(); 
@@ -116,8 +146,11 @@ async function handleFormSubmit() {
 async function handleCreateCard() {
     const name = nameInput.value.trim();
     const category = categoryInput.value.trim();
-    const price = priceInput.value.trim();
+    let price = priceInput.value.trim();
     const image = imageInput.value.trim();
+
+    // Converte o valor para o formato com ponto decimal antes de enviar
+    price = price.replace(/\./g, '').replace(',', '.');
 
     try {
         await connectionApi.handlePostApi(name, category, price, image);
@@ -125,10 +158,9 @@ async function handleCreateCard() {
         form.reset();
     } catch (error) {
         console.error('Erro ao criar card:', error);
-            throw error; /* // Propaga o erro para handleFormSubmit*/
+        throw error; // Propaga o erro para handleFormSubmit
     }
 }
-
 
 function handleShowSuccessModal() {
     successModal.classList.remove('hidden-modal-form');
@@ -160,4 +192,8 @@ noButton.addEventListener('click', () => {
 });
 
 clearButton.addEventListener('click', () => form.reset());
+
+
+
+
 
