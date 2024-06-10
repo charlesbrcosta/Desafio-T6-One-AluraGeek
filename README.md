@@ -1,7 +1,8 @@
 # AluraGeek
 
-AluraGeek é um projeto focado em um sistema de cadastro de produtos em formato de cards. Este repositório contém o código fonte e as instruções necessárias para executar o projeto localmente, bem como os links para acessar o deploy online e
-testar suas funcionalidades
+O objetivo do desafio AluraGeek foi desenvolver uma aplicação web para cadastro de cards, utilizando tecnologias amplamente utilizadas no mercado, como HTML5, CSS3 e JavaScript. Para simular uma API local no backend, foi utilizado o JSON Server, implementando métodos de requisição como GET, POST e DELETE. Além disso, foi assegurado a responsividade da aplicação para dispositivos móveis.
+
+Este repositório contém o código-fonte e as instruções necessárias para executar o projeto localmente, bem como os links para acessar a versão online. Para o deploy do backend simulado, foi utilizado o MockApi.
 
 ## :dizzy: Tecnologias utilizadas
 
