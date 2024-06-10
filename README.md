@@ -1,6 +1,6 @@
 # AluraGeek
 
-AluraGeek é um projeto focado em um sistema de cadastro de produtos em geral. Este repositório contém o código fonte e as instruções necessárias para executar o projeto localmente, bem como os links para acessar o deploy online.
+AluraGeek é um projeto focado em um sistema de cadastro de produtos em formato de cards. Este repositório contém o código fonte e as instruções necessárias para executar o projeto localmente, bem como os links para acessar o deploy online.
 Funcionalidades
 
 ## :dizzy: Tecnologias utilizadas
