@@ -51,7 +51,7 @@ Este repositório contém o código-fonte e as instruções necessárias para ex
    </div>
 </div>
 
-## :dizzy: Como Acessar o Deploy Online
+## :globe_with_meridians: Como Acessar o Deploy Online
 
 ### Vercel
 
