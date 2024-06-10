@@ -64,10 +64,6 @@ Alternativamente, você pode acessar o projeto através do GitHub Pages:
 
 [AluraGeek no GitHub Pages.](https://charlesbrcosta.github.io/Desafio-T6-One-AluraGeek/)
 
-## :memo: Observação
-
-Caso você pretenda utilizar o projeto no seu computador local, será necessário alterar o link no atributo `apiUrl` do arquivo `connectionApi` para `http://localhost:3000/cards` no . Este arquivo está localizado: `js/connectionApi.js`
-
 ## :warning: Como Executar o Projeto Localmente usando o node
 
 ### Pré-requisitos
@@ -141,6 +137,14 @@ Caso você pretenda utilizar o projeto no seu computador local, será necessári
 - Abra o arquivo index.html no navegador:
     ```bash 
     xdg-open index.html
+
+## :memo: Observação
+
+Após baixar o projeto no computador e realizar as configurações mencionadas acima, será necessário alterar o link no atributo `apiUrl` no arquivo `connectionApi.js` para `http://localhost:3000/cards`. Este arquivo está localizado em `js/connectionApi.js`.
+
+Por padrão, a porta utilizada é a `3000`, mas isso pode ser alterado. Para fazer isso, basta ir ao arquivo `package.json` e, na linha do `script` onde está o comando `json-server --watch db.json`, adicionar a porta desejada com `--port 3001`.
+
+Caso o usuário não esteja utilizando o `npm`, ele pode alterar a porta utilizando o terminal do Windows ou Linux, digitando o comando `json-server --watch db.json --port 3001`.
 
 ## :handshake: Contribuição
 
